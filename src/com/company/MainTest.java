@@ -3,39 +3,47 @@ package com.company;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+// if I don't import test, beforeEach and AfterEach... I won't be able to use them...
 
 import static org.junit.jupiter.api.Assertions.*;
+// library of assertions
 
 class MainTest {
 
-    private Main nameArray;
-    private Main add;
+    private Main main;
 
     @BeforeEach
     void setUp() {
-        this.add = new Main();
-        this.nameArray = new Main();
+        this.main = new Main();
     }
-
 
     @AfterEach
     void tearDown() {
+        // reset values used in tests
     }
 
-    @Test
-    void main() {
-
-    }
-
-
-    @Test
+    @org.junit.jupiter.api.Test
     void add() {
-        float number1 = 10;
-        float number2 = 20;
-        float expected = 30;
+        float numberOne = 41;
+        float numberTwo = 44;
+        float expected = 85;
         float actual;
 
-        actual = this.add.add(number1, number2);
-        assertEquals(expected, actual, 0.000);
+        actual = this.main.add(numberOne, numberTwo);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void myNextTest() {
+        String[] expectedOutput = {"Dean", "Jepson", "Bourne"};
+        String[] methodOutput = {"Dean", "Jepson", "Bourne"};
+        assertArrayEquals(expectedOutput, methodOutput);
+    }
+
+    @Test
+    public void mutliplicationTest() {
+//        Main test = new Main();
+        assertEquals(1518, main.multiply(69, 22), "69 times 22 equals 1518");
+        assertEquals(2000, main.multiply(50, 40), "2000 is expected");
     }
 }

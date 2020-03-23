@@ -21,4 +21,9 @@ public class Main {
         return number1 + number2;
     }
 
+    public float multiply(float numberOne, float numberTwo) {
+        return numberOne * numberTwo;
+    }
+
+
 }
